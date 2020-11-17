@@ -108,10 +108,11 @@ export default function addMeeting(meeting) {
   let { welcomeMsg } = newMeeting.welcomeProp;
 
   const sanitizeTextInChat = original => SanitizeHTML(original, {
-    allowedTags: ['a', 'b', 'br', 'i', 'img', 'li', 'small', 'span', 'strong', 'u', 'ul'],
+    allowedTags: ['a', 'b', 'br', 'i', 'img', 'li', 'small', 'span', 'strong', 'u', 'ul', 'div'],
     allowedAttributes: {
-      a: ['href', 'name', 'target'],
-      img: ['src', 'width', 'height'],
+      a: ['href', 'name', 'target', 'class', 'id'],
+      img: ['src', 'width', 'height', 'class', 'id'],
+      div: ['class', 'id'],
     },
     allowedSchemes: ['https'],
   });
